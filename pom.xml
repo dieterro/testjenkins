@@ -9,7 +9,7 @@
     </properties>
 
     <groupId>SeleniumEvolanesite2.0</groupId>
-    <artifactId>SeleniumEvolanesite2.0</artifactId> <!--deze pom.xml zonder selenium-jupiter -->
+    <artifactId>SeleniumEvolanesite2.0</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
@@ -99,14 +99,14 @@
                        <exclude>**/Test1EvoSimple.java</exclude>    <!--to exclude some test files, I want this pom-seljup.xml to only run selenium-jupiter test files -->
                        <exclude>**/Test2ChromeAndFirefoxJupiter.java</exclude>    <!--to exclude some test files, I want this pom-seljup.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test3TemplateJupiter.java</exclude>    <!--to exclude some test files, I want this pom-seljup.xml to only run a particular selenium-jupiter test file -->
-                 <!--      <exclude>**/Test4DockerJupiter.java</exclude>    <!- -to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test4DockerJupiter.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test5TemplDockJupBaby.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test6TemplDockJupBetter.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test7TemplDockJupIToplossingen.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test8DDTdynamicTest.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
          	       <exclude>**/Test9DDTparameterizedTest.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test10usedByTest9.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
-                       <exclude>**/Test11DDTparamNoTestTemplate.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                   <!--    <exclude>**/Test11DDTparamNoTestTemplate.java</exclude>    <!- -to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test12DesktopChromeMobileEmulation.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test13GridJupiterLocal.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
                        <exclude>**/Test14GridJupiterLocalEvo.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
