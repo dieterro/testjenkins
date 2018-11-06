@@ -8,8 +8,8 @@
         <junit.jupiter.version>5.3.1</junit.jupiter.version>
     </properties>
 
-    <groupId>SeleniumEvolanesite2.0</groupId>
-    <artifactId>SeleniumEvolanesite2.0</artifactId>
+    <groupId>Seleniumtestphptravel</groupId>
+    <artifactId>Seleniumtestphptravel</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
