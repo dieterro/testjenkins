@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <properties>
+        <junit.jupiter.version>5.3.1</junit.jupiter.version>
+    </properties>
+
+    <groupId>SeleniumEvolanesite2.0</groupId>
+    <artifactId>SeleniumEvolanesite2.0</artifactId> <!--deze pom.xml zonder selenium-jupiter -->
+    <version>1.0-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>htmlunit-driver</artifactId>
+            <version>2.32.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>       <!--SELENIUM-SERVER FOR GRID REMOTE TESTING (of locally) -->
+            <version>3.14.0</version>
+        </dependency> 
+<!--    <dependency>         I don't think I need this if using selenium-jupiter
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>3.0.0</version>
+            <scope>test</scope>
+        </dependency>
+-->
+        <dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>selenium-jupiter</artifactId>
+	    <version>2.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <!-- use 2.9.1 for Java 7 projects -->
+            <version>3.11.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-integration</artifactId>    <!-- using only for boni's docker examples, https://code.google.com/archive/p/hamcrest/wikis/HamcrestDistributables.wiki -->
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <runOrder>alphabetical</runOrder> <!-- so mvn command will first run class Test1zz, then class Test2xx -->
+                    <excludes>
+                       <exclude>**/Test1EvoSimple.java</exclude>    <!--to exclude some test files, I want this pom-seljup.xml to only run selenium-jupiter test files -->
+                       <exclude>**/Test2ChromeAndFirefoxJupiter.java</exclude>    <!--to exclude some test files, I want this pom-seljup.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test3TemplateJupiter.java</exclude>    <!--to exclude some test files, I want this pom-seljup.xml to only run a particular selenium-jupiter test file -->
+                 <!--      <exclude>**/Test4DockerJupiter.java</exclude>    <!- -to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test5TemplDockJupBaby.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test6TemplDockJupBetter.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test7TemplDockJupIToplossingen.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test8DDTdynamicTest.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+         	       <exclude>**/Test9DDTparameterizedTest.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test10usedByTest9.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test11DDTparamNoTestTemplate.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test12DesktopChromeMobileEmulation.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test13GridJupiterLocal.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+                       <exclude>**/Test14GridJupiterLocalEvo.java</exclude>    <!--to exclude some test files, I want this pom.xml to only run a particular selenium-jupiter test file -->
+<!-- w, e to jump forward, b to jump backwards  -->
+                    </excludes>                   
+                    <excludedGroups>slowtest,donotrun</excludedGroups>  <!-- this will exclude methods tagged with slowtest or donotrun -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
